@@ -1,0 +1,380 @@
+Design génératif : Cellular Automata
+
+Définition du design génératif 
+
+Processus qui consiste à générer une ou plusieurs formes à partir d’une machine, notamment les logiciels. Basés sur l’intelligence artificielle, celui - ci se base sur les contraintes pour la créations des design les plus adaptés : 
+
+Contraintes physiques 
+Points de pressions et de charges
+Matériaux accessibles
+Procédés de fabrication
+
+C’est grâce à tous ces paramètres que le programme sera en mesure de générer le  design.
+
+Définition du Cellular Automata 
+
+Processus qui consiste à générer un exemple de design génératif en se basant sur une grille régulière de cellules. Chaque ou plusieurs cellules (ou groupe de cellules) peuvent changer d’états en fonction du temps (couleurs, tailles, …) en fonction de son voisinage.
+
+Game of Life > M
+
+Game of life est un automate cellulaire bidimensionnel où chaque cellule peut prendre uniquement 2 valeurs (“vivante” ou “morte”). 
+
+Règles du Game of Life :
+Une case avec aucun ou un seul voisin : Meurt, comme si c’était par solitude
+Une case avec quatre ou plus voisins meurent, par surpopulation.
+Une case avec deux ou trois voisins survivent
+
+Si il y a trois voisins et un espace vide, l’espace vide sera rempli par un
+
+https://playgameoflife.com/ 
+
+
+Difficultés rencontrées.
+Nous avons cherché un exemple de Game of Life à reproduire, nous en avons trouvé plusieurs, mais ils utilisent pour la plupart une bibliothèque.
+Une fois le projet Game Of Life en pur javascript trouvé, il nous a fallu du temps pour assimiler le code. 
+
+
+
+
+
+
+Reproduction du Game Of Life
+Nous avons suivi le guide sur ce lien pour reproduire le game of life.
+
+
+
+
+
+
+Modification du projet pour générer automatiquement un rendu
+Au lieu de vouloir cliquer une case spécifique, nous avons modifié le code pour que ce soit aléatoire.
+
+Cette fonction est dans un setInterval() pour être appelée automatiquement tous les x temps.
+
+A chaque fois que la fonction est appelée, un nombre est généré aléatoirement
+
+Étapes supplémentaires
+
+Afin d’améliorer notre projet ou d’y ajouter du contenu, nous pouvons améliorer la propagation de notre programme en partant sur une seule cellule qui s’agrandit au cours du temps en déclenchant chaque cellules voisines.
+Nous pouvons également trouver une solution pour pouvoir rentrer plus de 2 valeurs dans chaque cellules pour faire des nuances de couleurs ou d’image .
+
+Qu’est-ce qu’on a appris
+
+
+
+____________________________________________________
+
+
+Le code
+Il y a trois étapes sur ce programme : 
+Création du tableau avec uniquement le background-image de la classe one
+Changement une cellule aléatoirement pour changer le background image en changeant la classe
+Changement des background image en rapport avec les voisin comme game of life
+A et B se produisant uniquement après un moment donné, A après que start ait été pressé et pendant 5 seconde et B après que A soit terminé
+mise en place du HTML
+
+mise en place du CSS
+
+body{
+    background-color: black;
+}
+ 
+*{
+    border: none;
+    margin: auto;
+    /* enlever toute les margin/border */
+}
+ 
+#world {
+    padding-top: 10px;
+    /* permet d'espacer les bouton du tableau */
+}
+table {
+    border-spacing: 0px;
+    /* diminue l'espace entre chaque case */
+}
+img {
+    object-fit: cover;
+    /* force l'image à recouvrir la case ou c'est l'autre */
+}
+image {
+    object-fit: cover;
+    /* force l'image à recouvrir la case ou c'est l'autre */
+}
+td {
+    width: 20px;
+    height: 20px;
+    /* taille de chaque cellule du tableau */
+}
+ 
+/* class qui remplace le background de la cellule par une image (de classe one à five)*/
+td.one {
+    background-image:url("Images/image1.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+td.two {
+    background-image:url("Images/image2.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+td.three {
+    background-image:url("Images/image3.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+td.four {
+    background-image:url("Images/image4.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+td.five {
+    background-image:url("Images/image5.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+
+
+Mise en place du JS
+Créaction des variable de base
+var isStarted = false /* Processus B est arrété par défaut */
+var randomIsDone = false /*Processus C est arrété par défaut */
+let image_class = "one" /* background image de base lors de la création du tableau */
+
+/*  utilisé pour créer les génération pour alterner entre currGen(génréation 1) et nextGen(génération 2 qui remplacera la génération 1 plus tard) */
+let currGen =[rows];
+let nextGen =[rows];
+ 
+
+
+/* bouton start et stop*/
+function start() {
+    isStarted = true /* commence étape B*/
+ 
+}
+function stop() {
+    isStarted = false /* arrête étape B*/
+    randomIsDone = false /* arrête étape C*/
+}
+ 
+ 
+function startCellular() {
+    randomIsDone = true
+    isStarted = false
+}
+ 
+setTimeout(startCellular, 10000) /* Arrete B et commence C au bout de 10 seconde*/
+ 
+
+
+_____________________________________________________________
+
+
+On sélectionne les éléments HTML correspondant au tableau et on les stocke dans des variables.
+
+On boucle sur le nombre de rangées, on crée l’élément tr qui correspond à la rangée de la table, puis pour chaque rangée on boucle sur le nombre de colonnes de la rangée. On crée l’élément td qui est une cellule de table (Boucle dans une boucle)
+
+Pour chaque cellule, on lui donne un attribut correspondant à la rangée (i) et la colonne (j), avec le caractère underscore _ pour les séparer.
+La classe est stockée dans une variable, la valeur est déterminée dans la fonction RandomClick vue plus haut.
+On place l’élément de rangée de tableau dans la table, qu’on place dans le monde.
+
+
+
+
+
+On crée deux tableaux ; la génération d’élément actuelle et la génération suivante (termes repris du game of life)
+Pour chaque rangée, on crée un tableau contenant le nombre de colonnes
+
+Ensuite,on initialise chaque colonne avec la valeur 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* vérifie la valeur de currGen[row][col] pour chaque celulle et change la classe en rapport avec cette valeur */
+ 
+function updateWorld() {
+    // if (!isStarted) return;
+    let cell='';
+    for (row in currGen) {
+        for (col in currGen[row]) {
+            cell = document.getElementById(row + '_' + col);
+            switch (currGen[row][col]) {
+                case 0:
+                    cell.setAttribute('class', 'one');
+                    break;
+                case 1:
+                    cell.setAttribute('class', 'two');
+                    break;
+                case 2:
+                    cell.setAttribute('class', 'three');
+                    break;
+                case 3:
+                    cell.setAttribute('class', 'four');
+                    break;
+                case 4:
+                    cell.setAttribute('class', 'five');
+                    break;
+            }
+             
+ 
+            }
+        }
+    }
+
+
+/* vérifie le nombre de voisin ayant le même identifiant currGen[][] et renvoie ce nombre(count) pour chaque cellule */
+function getNeighborCount(row, col) {
+    let count = 0;
+    let nrow=Number(row);
+    let ncol=Number(col);
+   
+        // vérifie qu’on n’est pas au premier row
+        if (nrow - 1 >= 0) {
+        // regarde le voisin d’en haut
+        if (currGen[nrow - 1][ncol] == currGen[nrow][ncol])
+            count++;
+    }
+        // vérifie qu’on est pas dans la premiere cell
+        // vérifie le voisin du coin en haut a gauche
+        if (nrow - 1 >= 0 && ncol - 1 >= 0) {
+        //regarde ce voisin
+        if (currGen[nrow - 1][ncol - 1] == currGen[nrow][ncol])
+            count++;
+    }
+// Make sure we are not on the first row last column
+        // Upper right corner
+        if (nrow - 1 >= 0 && ncol + 1 < cols) {
+        //Check upper right neighbor
+            if (currGen[nrow - 1][ncol + 1] == currGen[nrow][ncol])
+                count++;
+        }
+// Make sure we are not on the first column
+    if (ncol - 1 >= 0) {
+        //Check left neighbor
+        if (currGen[nrow][ncol - 1] == currGen[nrow][ncol])
+            count++;
+    }
+    // Make sure we are not on the last column
+    if (ncol + 1 < cols) {
+        //Check right neighbor
+        if (currGen[nrow][ncol + 1] == currGen[nrow][ncol])
+            count++;
+    }
+// Make sure we are not on the bottom left corner
+    if (nrow + 1 < rows && ncol - 1 >= 0) {
+        //Check bottom left neighbor
+        if (currGen[nrow + 1][ncol - 1] == currGen[nrow][ncol])
+            count++;
+    }
+// Make sure we are not on the bottom right
+    if (nrow + 1 < rows && ncol + 1 < cols) {
+        //Check bottom right neighbor
+        if (currGen[nrow + 1][ncol + 1] == currGen[nrow][ncol])
+            count++;
+    }
+   
+   
+        // Make sure we are not on the last row
+    if (nrow + 1 < rows) {
+        //Check bottom neighbor
+        if (currGen[nrow + 1][ncol] == currGen[nrow][ncol])
+            count++;
+    }
+   
+   
+    return count;
+}
+ 
+
+/* change currGen[][] pour qu'il soit égale à nextGen puis réinitialise nextGen pour qu'il puisse étre réutiliser après */
+    function updateCurrGen() {
+       
+        for (row in currGen) {
+            for (col in currGen[row]) {
+                // Update the current generation with
+                // the results of createNextGen function
+                currGen[row][col] = nextGen[row][col];
+                // Set nextGen back to empty
+                nextGen[row][col] = 0;
+            }
+        }
+     
+    }
+
+
+// lancer l’étape C en utilisant les fonction précédente =>
+1. créer la nextGen en rapport avec les voisin
+2. change la valeur de currGen et lui donner celle de nextGen puis remettre nextGen à 0
+3. change la classe de chaque cellule(pour changer le background) en rapport avec la valeur de currGen
+function evolve() {
+    if (!randomIsDone) return;
+    createNextGen();
+    updateCurrGen();
+    updateWorld();
+}
+
+
+                // permet de créer currGen et Nextgen et leur donner une valeur cellule par cellule(de base à 0)
+createGenArrays()
+initGenArrays()
+
+
+
+
+// dès que le bouton start est cliqué, des cellule sont changé aléatoirement pour avoir un rendu différent à chaque fois(toute les 0.01s)
+setInterval(randomClick, 10); 
+
+
+// arrête l’étape B au bout de 10 secondes
+setTimeout(startCellular, 10000)
+
+// change les cellules une par une en rapport avec leurs voisines toute les 0.5 secondes
+setInterval(evolve, 500);
+

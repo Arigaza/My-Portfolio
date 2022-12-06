@@ -1,0 +1,17 @@
+body{
+    position: relative;
+background-color: #FFFFFF;
+/* background-color:aquamarine; */
+/* background-color: rgb(20, 50, blue); */
+
+}
+p {
+font-style:oblique;
+font-weight:bold;
+}
+#p_black {
+    background-color: blue;
+}
+.red_paragraph {
+    color: bisque;
+}

@@ -1,0 +1,58 @@
+body {
+    margin: 30px;
+}
+
+.row25_4t {
+    display: grid;
+    height: 40rem;
+    grid-template-rows: repeat(4, 25%);
+    grid-template-columns: 15% 75%;
+    
+    grid-gap: 3rem;
+}
+
+.beige {
+    grid-row: 4 / 5;
+    grid-column: span 2;
+    background-color: wheat;
+}
+
+
+
+.rose {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    background-color: pink;
+}
+
+.blue {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    background-color: blue;
+}
+
+/* 2 */
+.rose2 {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    background-color: pink;
+}
+
+.blue2 {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    background-color: blue;
+}
+
+/* 3 */
+.rose3 {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
+    background-color: pink;
+}
+
+.blue3 {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 1;
+    background-color: blue;
+}

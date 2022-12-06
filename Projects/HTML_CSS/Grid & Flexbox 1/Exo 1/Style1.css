@@ -1,0 +1,58 @@
+body {
+/* align-self: center;   */
+margin: 30px;
+/* margin-left: 5rem;
+margin-right: 5rem; */
+}
+
+.raw20_80 {
+    display: grid;
+    height: 30rem;
+    grid-template-rows: 20% 80%;
+    grid-template-columns:32% 32% 32%; ;
+    grid-gap: 1em;
+}
+
+.blue {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: black;
+    grid-row: 1 / 2;
+    grid-column: span 3;
+    background-color: blue;
+    /* width: 100%; */
+}
+
+    /* .column3_33 {
+        grid-row: 2 / 3;
+    } */
+
+.red {
+    /* grid-row: 2 / 3; */
+    /* grid-column: 1 / 2; */
+    background-color: red;
+    /* grid-column: 1; */
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: black;
+}
+
+.green {
+    /* grid-row: 2 / 3; */
+    /* grid-column:    2 / 3; */
+    background-color: green;
+    /* grid-column:""; */
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: black;
+}
+
+.orange {
+    /* grid-row: 2 / 3; */
+    /* grid-column: 3 / 4; */
+    background-color: orange;
+    /* grid-column: position: 1; */
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: black;
+}

@@ -1,0 +1,501 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0px;
+  box-sizing: border-box;
+  /*  border and padding in the values you specify for an element's width and height.*/
+  z-index: 1;
+  /* reset margin etc & tout derrière */
+}
+
+img {
+  object-fit: cover;
+  /* force l'image à couvrir la totalité de l'espace offert
+   même si trop petite */
+}
+
+body {
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+nav {
+  position: sticky;
+  width: 100%;
+  height: 64;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0px;
+  background-color: #003247;
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-color: #335E6F;
+  padding: 10px;
+  z-index: 9;
+}
+
+.mySlides {
+  display: none;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: 0px;
+  overflow: hidden;
+  max-width: 100%;
+  height: 80vh;
+}
+
+/* Text inside image */
+.text {
+  position: absolute;
+  font-size: 15px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  left: 40px;
+  gap: 5%;
+  z-index: 4;
+}
+
+.top {
+  color: #f2f2f2;
+  top: 0%;
+  height: 100%;
+}
+
+.middle {
+  top: 47%;
+  height: 53%;
+}
+
+.center {
+  justify-content: center;
+  width: 25%;
+}
+
+.spacebetween {
+  justify-content: space-between;
+
+}
+
+/* text inside image end */
+
+.stories {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 0.2rem;
+}
+
+/* text avec background selon les couleur 
+pas réussi à avoir la banground tout seul*/
+.nameBackground {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #7B98A8;
+  padding: 5px;
+  color: #f2f2f2;
+}
+
+.nameBackgroundRed {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #ED1B2F;
+  padding: 5px;
+  color: #f2f2f2;
+}
+
+.nameBackgroundBlue {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #6dcff6;
+  padding: 5px;
+  color: #f2f2f2;
+}
+
+.nameBackgroundGreen {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #76c8ae;
+  padding: 5px;
+  color: #f2f2f2;
+}
+
+.nameBackgroundYellow {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #ffcc4e;
+  padding: 5px;
+  color: #f2f2f2;
+}
+
+/* text avec background selon les couleur */
+
+.boldText {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.datesViews {
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  gap: 2rem;
+}
+
+.slideButton {
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  color: #335E6F;
+  padding: 10px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  position: relative;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  /* background-color: white; */
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  border: 3px solid white;
+
+}
+
+.dotBackground {
+  position: absolute;
+  top: 84vh;
+  z-index: 6;
+  left:50px;
+}
+
+.active,
+.dot:hover {
+  background-color: white;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  /* user-select: none; */
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+  .prev,
+  .next,
+  .text {
+    font-size: 11px
+  }
+}
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mainGrid {
+  padding: 48px;
+  background-color: #0b1d26;
+  display: grid;
+  height: 222.917px;
+  grid-template-rows: repeat(5, fr);
+  grid-template-columns: repeat(5, fr);
+  grid-gap: 8px;
+  display: grid;
+  /* align-items: center;
+justify-content: center; */
+}
+
+
+/* couleur text */
+.white {
+  color: white;
+}
+
+.gray {
+  color: #8197a6;
+}
+
+.red {
+  color: #f1666a;
+}
+
+.blue {
+  color: #6dcff6;
+}
+
+.green {
+  color: #76c8ae;
+}
+
+.yellow {
+  color: #ffcc4e;
+}
+
+/* grid était pas une si bonne idée :'( */
+.columns:nth-child(1) {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.columns:nth-child(2) {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.columns:nth-child(3) {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.columns:nth-child(4) {
+  grid-area: 1 / 5 / 2 / 6;
+}
+
+.columns:nth-child(5) {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.columns:nth-child(6) {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.columns:nth-child(7) {
+  grid-area: 4 / 1 / 5 / 2;
+
+}
+
+.columns:nth-child(8) {
+  grid-area: 5 / 1 / 6 / 2;
+
+}
+
+.columns:nth-child(9) {
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.columns:nth-child(10) {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+.columns:nth-child(11) {
+  grid-area: 4 / 3 / 5 / 4;
+}
+
+.columns:nth-child(12) {
+  grid-area: 5 / 3 / 6 / 4;
+}
+
+.columns:nth-child(13) {
+  grid-area: 2 / 4 / 3 / 5;
+}
+
+.columns:nth-child(14) {
+  grid-area: 3 / 4 / 4 / 5;
+}
+
+.columns:nth-child(15) {
+  grid-area: 4 / 4 / 5 / 5;
+}
+
+.columns:nth-child(16) {
+  grid-area: 5 / 4 / 6 / 5;
+}
+
+.columns:nth-child(17) {
+  grid-area: 2 / 5 / 3 / 6;
+}
+
+.columns:nth-child(18) {
+  grid-area: 3 / 5 / 4 / 6;
+}
+
+.columns:nth-child(19) {
+  grid-area: 4 / 5 / 5 / 6;
+}
+
+.columns:nth-child(20) {
+  grid-area: 5 / 5 / 6 / 6;
+}
+
+.columns:nth-child(21) {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.columns:nth-child(22) {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.columns:nth-child(23) {
+  grid-area: 4 / 2 / 5 / 3;
+}
+
+.columns:nth-child(24) {
+  grid-area: 5 / 2 / 6 / 3;
+}
+
+
+
+
+.spotlight {
+  display: flex;
+  padding: 96px 96px 144px 96px;
+  background-color: #E8E8E4;
+  justify-content: space-between;
+}
+
+.spotlightText {
+  font-size: 4rem;
+  font-weight: bolder;
+  color: #003247;
+}
+
+.rowContent {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+
+.buttons {
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  position: relative;
+  display: flex;
+  color: #335E6F;
+  border-color: #335E6F;
+  border: 2px solid #335E6F;
+  text-transform: uppercase;
+  padding: 0 25px 0 25px;
+  align-items: center;
+}
+
+.activeStories,
+.buttons:hover {
+  background-color: #335E6F;
+  color: #E8E8E4;
+}
+
+
+/* stories */
+.storiesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 35px;
+  column-gap: 5px;
+  background-color: #E8E8E4;
+  padding-bottom: 50px;
+}
+
+.storiesItem {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  background-color: #003247;
+  margin: 0 1em;
+  overflow: hidden;
+}
+
+.margin20 {
+  margin-top: 20px;
+}
+
+.directionColumns {
+  display: flex;
+  flex-direction: row;
+  justify-items: space-between;
+}
+
+.backgroundWhite {
+  background-color: white;
+  color: #003247;
+}
+
+.backgroundBlue {
+  background-color: #003247;
+  color: #FFFFFF;
+}
+
+/* .spotlightStories {
+  display: none;
+}
+
+.spotlightImage {
+  display: none;
+}
+
+.spotlightVideos {
+  display: none;
+} */
+
+/* image & text */
+
+.imageText {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+}
+
+
+/* recommended */
+
+.recommendedItems {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  margin: 0 1em;
+  overflow: hidden;
+}

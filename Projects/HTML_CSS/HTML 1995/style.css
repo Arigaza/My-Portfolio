@@ -1,0 +1,74 @@
+* {
+    margin-top: 0px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    width: 50%;
+    margin-bottom: 1rem;
+    ;
+}
+
+body {
+    margin-left: 0px;
+    margin-right: 0px;
+    /* border:0px; */
+    background-color: rgba(11, 29, 38, 0.5);
+    color: #FFFFFF;
+}
+
+h1 {
+    just
+    /* position: fixed; */
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    /* margin: 0px; */
+    border-top: 0px;
+    padding-top: 0px;
+    text-align: center;
+    line-height: 1.3rem;
+    background-color: #003247;
+    font-size: 1rem;
+    font-family: 'NotesESAbold', sans-serif;
+}
+
+h5 {
+    margin-left: 2em;
+    margin-right: 2em;
+    font-weight: 100;
+    font-family: 'NotesESAbold', sans-serif;
+    font-size: 0.75rem;
+}
+
+p {
+    margin-left: 2em;
+    margin-right: 2em;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 100;
+    line-height: 1;
+}
+
+ul {
+    margin-left: 2em;
+    margin-right: 2em;
+    font-family: 'Arial', sans-serif;
+    font-size: .5rem;
+    font-weight: 400;
+}
+
+ol {
+    margin-left: 2em;
+    margin-right: 2em;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 100;
+}
+
+.color_red {
+    color: crimson;
+}

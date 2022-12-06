@@ -1,0 +1,58 @@
+body{
+    background-color: black;
+}
+
+*{
+    border: none;
+    margin: auto;
+    /* enlever toute les margin/border */
+}
+
+#world {
+    padding-top: 10px;
+    /* permet d'espacer les bouton du tableau */
+}
+table {
+    border-spacing: 0px;
+    /* diminue l'espace entre chaque case */
+}
+img {
+    object-fit: cover;
+    /* force l'image à recouvrir la case ou c'est l'autre */
+}
+image {
+    object-fit: cover;
+    /* force l'image à recouvrir la case ou c'est l'autre */
+}
+td {
+    width: 20px;
+    height: 20px;
+    /* taille de chaque cellule du tableau */
+}
+
+/* class qui remplace le background de la cellule par une image (de classe one à five)*/
+td.one {
+    background-image:url("Images/image1.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+td.two {
+    background-image:url("Images/image2.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+td.three {
+    background-image:url("Images/image3.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+td.four {
+    background-image:url("Images/image4.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+td.five {
+    background-image:url("Images/image5.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
