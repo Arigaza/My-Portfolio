@@ -1,0 +1,349 @@
+* {
+  /* z-index: 0;    */
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+ }
+body {
+  width: 100%;
+}
+a {
+color: inherit;
+text-decoration: none;
+}
+ img {
+  object-fit: cover;
+  /* force l'image à couvrir la totalité de l'espace offert
+   même si trop petite */
+}
+
+
+header {
+  position: sticky;
+  top: 0px;
+  background-color: rgb(4, 57, 114);
+  z-index: 10;
+}
+
+#header_menu{
+  display: grid;
+  grid-template-columns: 20% 80%;
+  color: azure;
+}
+#logo_menu{
+  max-height: 80px;
+}
+#menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+  align-items:center ;
+  margin-right: 30px;
+
+
+} 
+footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 351px;
+  justify-content: space-around;
+  align-items: center;
+  /* padding: 10px; */
+  z-index: 2;
+}
+
+.footerLine {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between; 
+  gap: 30px;
+}
+.whiteOnRed {
+ background-color:rgb(4, 57, 114); 
+ color: white;
+}
+
+.whiteOnBlue {
+  color: white;
+background-color: #011647;
+}
+
+/* Carroussel */
+
+.mySlides {
+  display: none;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: 0px;
+  overflow: hidden;
+  max-width: 100%;
+  height: 80vh;
+}
+
+/* Text inside image */
+.text {
+  position: absolute;
+  font-size: 15px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  left: 40px;
+  gap: 5%;
+  z-index: 4;
+}
+
+.top {
+  color: #f2f2f2;
+  top: 0%;
+  height: 100%;
+}
+
+.middle {
+  top: 47%;
+  height: 53%;
+}
+
+.center {
+  justify-content: center;
+  width: 25%;
+}
+
+.spacebetween {
+  justify-content: space-between;
+
+}
+
+/* text inside image end */
+
+.stories {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 0.2rem;
+}
+
+/* text avec background selon les couleur 
+pas réussi à avoir la banground tout seul*/
+.nameBackground {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #7B98A8;
+  padding: 5px;
+  color: #f2f2f2;
+}
+
+.nameBackgroundRed {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #ED1B2F;
+  padding: 5px;
+  color: #f2f2f2;
+}
+
+.nameBackgroundBlue {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #6dcff6;
+  padding: 5px;
+  color: #f2f2f2;
+}
+
+.nameBackgroundGreen {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #76c8ae;
+  padding: 5px;
+  color: #f2f2f2;
+}
+
+.nameBackgroundYellow {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #ffcc4e;
+  padding: 5px;
+  color: #f2f2f2;
+}
+
+/* text avec background selon les couleur */
+
+.boldText {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.datesViews {
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  gap: 2rem;
+}
+
+.slideButton {
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  color: #335E6F;
+  padding: 10px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  position: relative;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  /* background-color: white; */
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  border: 3px solid white;
+
+}
+
+.dotBackground {
+  position: absolute;
+  top: 84vh;
+  z-index: 6;
+  left:50px;
+}
+
+.active,
+.dot:hover {
+  background-color: white;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  /* user-select: none; */
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+  .prev,
+  .next,
+  .text {
+    font-size: 11px
+  }
+}
+
+/* Carroussel */
+#sncflogo{
+  display: flex;
+  justify-content: center;
+  margin: 80px;
+  height: 100px;
+}
+#paraph1{
+ color: rgb(0, 0, 0);
+ text-align: center;
+ justify-content: space-between;
+ /* margin: 69px; */
+ font-family: 'Lucida Sans';
+ margin: 69px 24%; 
+}
+#paraph2{
+  color: rgb(4, 57, 114);
+  text-align: center;
+  justify-content: space-between;
+  margin: 69px 24%;
+}
+#paraph3{
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: bold;
+  margin: 69px 24%;
+}
+#paraph4{
+  color: rgb(4, 57, 114);
+  text-align: center;
+  font-weight: bold;
+  margin: 69px 24%;
+}
+#paraph5{
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: bold;
+  margin: 69px 24%;
+}
+body {
+  background-color: #ededed;
+ 
+}
+#center {
+  display: flex;
+  justify-content: center;
+}
+
+
+@media only screen and (max-width: 620px) {
+  footer {
+    height: 651px;  
+}
+  .footerLine {
+    display: flex;
+    flex-direction: column;
+    gap: 3  0px;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+}
+.searchBox {
+  width: 400px;
+}
+.searchFormation {
+  width: 100px;
+}
+}

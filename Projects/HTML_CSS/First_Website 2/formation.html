@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formation.css">
+    <script src="dropDown.js" defer></script>
+    <script src="SearchWork.js" defer></script>
+</head>
+
+<header>
+    <div id="header_menu" class="whiteOnBlue">
+        <a href="acceuil.html">
+	        <img id="logo_menu" src="Assets/logo.png">
+		</a>
+        <ul id="menu">
+            <li>ARENGI</li>
+            <li>OFFRES</li>
+            <li>ARENGIBOX</li>
+            <li>WEBINARS</li>
+            <li>ACTU'</li>
+            <li>LETTRES D'INFO</li>
+        </ul>
+
+</header>
+
+<body>
+
+    <div class="bodyPadding itemPadding">
+        <!-- Title -->
+        <div class="mainTitle blue center itemPadding">
+            Trouver une formation au numérique
+        </div>
+
+        <!-- Job search -->
+
+        <Div class="itemPadding">
+            <div class="footerLine whiteBackground searchBox" >
+               <div class="dropdown" onclick="myFunction()">
+                <div class="itemText dropbtn blue">
+                    <img src="Assets\menu.png" alt="more" height="16px">
+                    <p>formation</p>
+                    <img src="Assets\arrowDown.png" alt="more choice">
+                    <div id="myDropdown" class="dropdown-content">
+                        <div class="dropdownButton" onclick="currentStorie(1)">Developpeur Web</div>
+                        <div class="dropdownButton" onclick="currentStorie(2)">Developpeur Swift / SwiftUI</div>
+                        <div class="dropdownButton" onclick="currentStorie(3)">Developpeur Java</div>
+                        <div class="dropdownButton" onclick="currentStorie(4)">Developpeur Python</div>
+                        <div class="dropdownButton" onclick="currentStorie(5)">Developpeur C / C++</div>  
+                      </div>
+                    </div>
+                </div>
+                <img src="Assets\Separator.png" alt="Separator">
+                <div class="itemText">
+                    <img src="Assets\Search.png" alt="Search" height="24px">
+                    <input type="text" id="fname" name="fname" placeholder="Search..." class="searchFormation">
+                </div>
+            </div>
+        </div>
+
+        <!-- localisation -->
+        <div class="gapWrap40 itemPadding">
+            <div class="footerLine whiteBackground" style="width:280px; height: 40px;">
+                <div class="itemText">
+                    <img src="Assets\LocalisationIcone.png" alt="Search" height="24px">
+                    <input type="text" id="fname" name="fname" placeholder="Localisation...">
+                </div>
+
+            </div>
+            <div class="footerLine whiteBackground" style="width:280px; height: 40px;">
+                <div class="itemText">
+                    <img src="Assets\StudiesLevel.png" alt="Search" height="24px">
+                    <p class="blue">Niveau d'études actuel</p>
+                    <img src="Assets\arrowDown.png" alt="more choice">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- localisation -->
+        <div onclick="showStories();" class="buttons itemPadding button" style="width: 200px;">
+            <span>Lancer ma recherche</span>
+        </div>
+
+        <!-- Stories -->
+        <div class=" storiesContainer itemPadding">
+            <!-- 1 -->
+            <div class="stories white web">
+                <img class="storiesImage" src="Assets\Storie1.jpg" alt="Stories" width="650px">
+                <div class="textImage top">
+                    <div class="mainTitle allUppercase">Formation de Dev Web 9 mois</div>
+                    <div class="mainText hiddenH">
+                   Formation comprenant 7 mois en intensif et 1.5 mois de stage, si validé et équivalent à un bac +2
+                    </div>
+                </div>
+                <div class="buttons botRightButton" style="width: 200px; border-radius: 15px 0 15px 15px;">
+                    <span>Lancer ma recherche</span>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="stories white web">
+                <img class="storiesImage" src="Assets\Storie1.jpg" alt="Stories" width="650px">
+                <div class="textImage top">
+                    <div class="mainTitle allUppercase">Initiation dev web 1 mois</div>
+                    <div class="mainText hiddenH">
+                    Formation de 1 mois intensif permettant de savoir si le code vous plait, aucun diplome reconnu suite à cette formation
+                    </div>
+                </div>
+                <div class="buttons botRightButton" style="width: 200px; border-radius: 15px 0 15px 15px;">
+                    <span>Lancer ma recherche</span>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="stories white swift">
+                <img class="storiesImage" src="Assets\Storie1.jpg" alt="Stories" width="650px">
+                <div class="textImage top">
+                    <div class="mainTitle allUppercase">Formation Apple Foundation program 1 mois</div>
+                    <div class="mainText hiddenH">
+                     Formation de 1 mois intensif en partenaria avec Apple, l'AFP est une initiation à swift et swiftUI où vous ferez le prototype d'une application au bout d'un mois
+                    </div>
+                </div>
+                <div class="buttons botRightButton" style="width: 200px; border-radius: 15px 0 15px 15px;">
+                    <span>Lancer ma recherche</span>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="stories white swift">
+                <img class="storiesImage" src="Assets\Storie1.jpg" alt="Stories" width="650px">
+                <div class="textImage top">
+                    <div class="mainTitle allUppercase">Formation Apple Foundation program Extended 3 mois</div>
+                    <div class="mainText hiddenH">
+          L'AFP extended est une formation de 3 mois intensif en partenaria avec Apple, elle fait suite à l'AFP et permet d'étendre les compétences acquise lors de celle ci et de faire une application au lieu d'un prototype.
+                    </div>
+                </div>
+                <div class="buttons botRightButton" style="width: 200px; border-radius: 15px 0 15px 15px;">
+                    <span>Lancer ma recherche</span>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="stories white python">
+                <img class="storiesImage" src="Assets\Storie1.jpg" alt="Stories" width="650px">
+                <div class="textImage top">
+                    <div class="mainTitle allUppercase">Formation Python 18 mois</div>
+                    <div class="mainText hiddenH">
+                      Formation en alternance de 18 mois, permettant après avoir passé la certification d'avoir l'équivalent d'un bac + 2
+                    </div>
+                </div>
+                <div class="buttons botRightButton" style="width: 200px; border-radius: 15px 0 15px 15px;">
+                    <span>Lancer ma recherche</span>
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="stories white c">
+                <img class="storiesImage" src="Assets\Storie1.jpg" alt="Stories" width="650px">
+                <div class="textImage top">
+                    <div class="mainTitle allUppercase">VOUS RENSEIGNER SUR LES FORMATIONS INCLUSIVES</div>
+                    <div class="mainText hiddenH">
+                        Les formations Inclusives sont ouverte à tous, avec ou sans bac et sont gratuite pour les
+                        personnes éloigné de l’emploi.
+                    </div>
+                </div>
+                <div class="buttons botRightButton" style="width: 200px; border-radius: 15px 0 15px 15px;">
+                    <span>Lancer ma recherche</span>
+                </div>
+            </div>
+        </div>
+    </Div>
+    <!-- Stories -->
+</body>
+<footer class="whiteOnBlue">
+    <img src="https://simplon.co/images/logo-footer.svg" alt="Simplon Icon">
+    <div class="footerLine">
+        <div>Devenir formateur</div>
+        <div>Rejoindre nos équipes</div>
+        <div>Blog</div>
+        <a href="contact.html">Contact</a>
+        <div>Simplon-Foundation</div>
+        <div>Accéssibilité</div>
+        <div>Mentions Légales</div>
+        <div>Plan du site</div>
+    </div>
+</footer>
+
+</html>
